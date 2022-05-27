@@ -16,6 +16,7 @@ class App extends Component{
                 {10>20?aaa:bbb}
                 <div style={obj}>1111</div>
                 <div style={{background:"red"}}>222</div>
+                {/*React推荐行内样式,方便组件直接带走*/}
                 <div className="active">333333333333</div>
                 <label htmlFor="username">用户名</label>
                 <input type="text" id = "username"/>
