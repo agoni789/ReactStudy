@@ -1,10 +1,19 @@
 // console.log("qwert")
 import React from "react";
-import ReactDom from 'react-dom'
-import App from './01-base/02-函数式组件'
+// import ReactDom from 'react-dom'
+import { createRoot } from 'react-dom/client';
+import App from './01-base/03-组件的嵌套'
 
+/**
+ * 18版本的写法
+ * @type {HTMLElement}
+ */
+const container = document.getElementById('root');
+const root = createRoot(container);
+root.render(<App/>)
 
-ReactDom.render(<App></App>,document.getElementById("root"))
+/*17版本的写法*/
+// ReactDom.render(<App/>,document.getElementById("root"))
 
 //jsx  js+xml
 
