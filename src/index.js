@@ -1,7 +1,7 @@
 // console.log("qwert")
 import React from "react";
 import ReactDom from 'react-dom'
-import App from './01-base/01-class组件'
+import App from './01-base/02-函数式组件'
 
 
 ReactDom.render(<App></App>,document.getElementById("root"))
