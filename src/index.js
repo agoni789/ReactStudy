@@ -2,7 +2,7 @@
 import React from "react";
 // import ReactDom from 'react-dom'
 import { createRoot } from 'react-dom/client';
-import App from './01-base/05-事件绑定'
+import App from './01-base/06-事件绑定-2'
 
 /**
  * 18版本的写法
