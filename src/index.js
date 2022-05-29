@@ -2,7 +2,7 @@
 import React from "react";
 // import ReactDom from 'react-dom'
 import { createRoot } from 'react-dom/client';
-import App from './01-base/07-ref'
+import App from './01-base/08-state'
 
 /**
  * 18版本的写法
