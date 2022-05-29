@@ -2,7 +2,7 @@
 import React from "react";
 // import ReactDom from 'react-dom'
 import { createRoot } from 'react-dom/client';
-import App from './01-base/06-事件绑定-2'
+import App from './01-base/07-ref'
 
 /**
  * 18版本的写法
@@ -10,7 +10,11 @@ import App from './01-base/06-事件绑定-2'
  */
 const container = document.getElementById('root');
 const root = createRoot(container);
-root.render(<App/>)
+root.render(
+// <React.StrictMode>
+    <App/>
+// </React.StrictMode>
+)
 
 /*17版本的写法*/
 // ReactDom.render(<App/>,document.getElementById("root"))
