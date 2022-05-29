@@ -31,6 +31,9 @@ class App extends Component
         console.log("handle4",this.a)
     }
 }
+/*
+react不会真正绑定到具体元素上  而是采用事件代理的模式
+ */
 
 /*
 事件绑定三种
