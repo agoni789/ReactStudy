@@ -32,7 +32,13 @@ class App extends Component
                     {
                         this.state.list.map((item,index)=>
                             <li key={item.id}>
-                                {item.text}
+                                {/*{item.text}*/}
+                                {/*富文本展示*/}
+                                <span dangerouslySetInnerHTML={
+                                    {
+                                        __html:item.text
+                                    }
+                                }></span>
                                 {/*<button onClick={this.handleDelClick.bind(this,index)}>del</button>*/}
                                 <button onClick={()=>{
                                     this.handleDelClick(index)
