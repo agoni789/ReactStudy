@@ -30,7 +30,14 @@ class App extends Component
                 }}>add</button>
                 <ul>
                     {
-                        this.state.list.map(item=><li key={item.id}>{item.text}</li>)
+                        this.state.list.map((item,index)=>
+                            <li key={item.id}>
+                                {item.text}
+                                {/*<button onClick={this.handleDelClick.bind(this,index)}>del</button>*/}
+                                <button onClick={()=>{
+                                    this.handleDelClick(index)
+                                }}>del</button>
+                            </li>)
                     }
                 </ul>
             </div>
@@ -49,6 +56,17 @@ class App extends Component
         this.setState({
             list:newList
         })
+        //清空输入框
+        this.myRef.current.value = ""
     }
+   handleDelClick(index){
+        console.log("del",index)
+
+       let newList =  this.state.list.slice()
+       newList.splice(index,1)
+       this.setState({
+           list:newList
+       })
+   }
 }
 export default App
