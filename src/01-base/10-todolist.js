@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-
+import './css/01-index.css'
 class App extends Component
 {
     a= 100
@@ -40,6 +40,10 @@ class App extends Component
                             </li>)
                     }
                 </ul>
+                {/*方案一*/}
+                {/*{this.state.list.length===0?<div>暂无代办事项</div>:null}*/}
+                {/*{this.state.list.length===0&&<div>暂无代办事项</div>}*/}
+                <div className={this.state.list.length===0?'':'hidden'}>暂无代办事项</div>
             </div>
         );
     }
