@@ -2,7 +2,7 @@
 import React from "react";
 // import ReactDom from 'react-dom'
 import { createRoot } from 'react-dom/client';
-import App from './01-base/11-dangerouslySetInnerHTML'
+import App from './01-base/10.5-todolist'
 
 /**
  * 18版本的写法
