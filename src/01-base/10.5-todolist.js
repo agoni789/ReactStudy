@@ -28,25 +28,37 @@ class App extends Component
     {
         return (
             <div>
-                <input ref={this.addRef}/>
-                <button onClick={ ()=>{
+                <input onKeyDown={
+                    this.addInputKeyUp
+                } ref={this.addRef}/>
+                <button  onClick={ ()=>{
                     this.handleClick()
                 }}>新增</button>
                 <ul>
                     {
                         this.state.list.map((item,index)=>
                             <li key={item.id}>
-                                <span className={item.textShow?'':'hidden'}>{item.text}</span>
-                                <input id={"input"+index} className={item.textShow?'hidden':''} defaultValue={item.text}/>
-                                <button onClick={()=>{
+                                <div onClick={()=>{
                                     this.handleChangeClick(index)
-                                }}>修改</button>
-                                <button onClick={()=>{
+                                }} className={"todolist_up"}>
+                                <span  className={item.textShow?'':'hidden'}>{item.text}</span>
+                                <input  onKeyDown={(e)=>{
+                                    this.updateInputKeyUp(e,index)
+                                }} onBlur={()=>{
                                     this.handleUpdateClick(index)
-                                }}>更新</button>
+                                }} id={"input"+index} className={item.textShow?'hidden':''} defaultValue={item.text}/>
+                                </div>
+                                {/*<button onClick={()=>{*/}
+                                {/*    this.handleChangeClick(index)*/}
+                                {/*}}>修改</button>*/}
+                                {/*<button onClick={()=>{*/}
+                                {/*    this.handleUpdateClick(index)*/}
+                                {/*}}>更新</button>*/}
+                                <div className={"todolist_down"}>
                                 <button onClick={()=>{
                                     this.handleDelClick(index)
                                 }}>删除</button>
+                                </div>
                             </li>)
                     }
                 </ul>
@@ -54,10 +66,26 @@ class App extends Component
             </div>
         );
     }
+    addInputKeyUp=(e)=>{
+        if(e.keyCode===13){
+            //调用和提交按钮同样的方法
+            this.handleClick()
+        }
+    }
+    updateInputKeyUp(e,index){
+        if(e.keyCode===13){
+            //调用和提交按钮同样的方法
+            this.handleUpdateClick(index)
+        }
+    }
     handleClick = ()=>{
         console.log("click",this.addRef.current.value)
         //不要直接修改状态,可能造成不可预期问题
         // this.state.list.push(this.myRef.current.value)
+
+        if(this.addRef.current.value===""){
+            return
+        }
 
         let newList =  [...this.state.list]
         newList.push({
@@ -87,6 +115,7 @@ class App extends Component
         this.setState({
             list:newList
         })
+        document.getElementById("input"+index).focus()
     }
     handleUpdateClick(index){
         console.log("update",index)

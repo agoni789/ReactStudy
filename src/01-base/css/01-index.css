@@ -5,3 +5,11 @@
 .hidden{
     display: none;
 }
+
+.todolist_up{
+    width: 200px;
+    display:inline-block;
+}
+.todolist_down{
+    display:inline-block;
+}
