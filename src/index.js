@@ -2,7 +2,7 @@
 import React from "react";
 // import ReactDom from 'react-dom'
 import { createRoot } from 'react-dom/client';
-import App from './01-base/12-卖座选项卡';
+import App from './01-base/15-betterSreoll-ciname';
 
 /**
  * 18版本的写法
